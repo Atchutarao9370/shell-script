@@ -1,6 +1,6 @@
 #!/bin/bash
 
-abcdefg=(id= -u)
+abcdefg=$(id -u)
 
 if [ $abcdefg -ne 0 ]
 then 
