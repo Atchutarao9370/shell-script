@@ -1,9 +1,9 @@
 #!/bin/bash
 
-n=$1
+abcdef=$1
 # -gt -lt -eq -ge -le
 
-if [ n -gt 100 ]
+if [ abcdef -gt 100 ]
 then
     echo "Given number is greater than 100"
 else
