@@ -1,11 +1,10 @@
 #!/bin/bash
+USRERID=$(id -u)
 
-abcdefg=$(id -u)
-
-if [ $abcdefg -ne 0 ]
+if [ $USERID -ne 0 ]
 then 
-    echo "Error:: You must have access to execute the script"
-    exit 1 #other tahn 0
+    echo "Error:: You must have sudo access to execute thi script"
+    exit 1
 fi
 
 dnf list installed mysql
@@ -21,22 +20,5 @@ then
         echo "Installing MYSQL ... SUCCESS"
     fi
 else
-    echo "MYSQL is already ... INSTALLED"
-fi
-
-
-dnf list installed git
-
-if [ $? -ne 0 ]
-then
-    dnf install git -y
-    if [ $? -ne 0 ]
-    then
-        echo "Installing Git ... FAILURE"
-        exit 1
-    else 
-        echo "Installing Git ... SUCCESS"
-    fi
-else 
-    echo "Git is already  ... INSTALLED"
+    echo "MYSQL already INSTALLED"
 fi
